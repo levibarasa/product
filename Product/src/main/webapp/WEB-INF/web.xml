@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+   
+     <servlet>
+        <servlet-name>Product</servlet-name>
+        <servlet-class>com.advanta.servlet.apServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Product</servlet-name>
+        <url-pattern>/do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            20
+        </session-timeout>
+    </session-config>
+    <listener>
+        <listener-class>com.advanta.lstner.apContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.advanta.lstner.apSessionListener</listener-class>
+    </listener> 
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/login.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/login.jsp</location>
+    </error-page>
+</web-app>
